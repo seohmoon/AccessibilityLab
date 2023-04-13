@@ -1,10 +1,3 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by 🤦🏻‍♀️ 🤦🏻‍♀️ on 2023/04/13.
-//
-
 import SwiftUI
 
 struct NavyButton: View{
@@ -15,7 +8,7 @@ struct NavyButton: View{
             action:action,
             label:{
                 ZStack{
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "373F86")).offset(x:5,y:5)
+                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "121C72")).offset(x:-4,y:5)
                     
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "FFFFFF"))
                     
