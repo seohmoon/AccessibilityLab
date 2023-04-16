@@ -1,7 +1,11 @@
 import SwiftUI
 
+let colorList = ["FFFFFF", "FFFA79", "EE8B48","717C24","4C48FF","9E00FF"]
+
 struct Step4Lab: View {
     @State var labCheck: Bool = false
+    @State var backResult: String = "4C48FF"
+    @State var arrowResult: String = "FFFFFF"
     @State var backColor = Color(hex: "4C48FF")
     @State var arrowColor = Color(hex: "FFFFFF")
     
@@ -28,7 +32,6 @@ struct Step4Lab: View {
                     Text("Change the color of the button")
                         .font(.system(size: 24))
                         .foregroundColor(Color(hex: "121C72"))
-                    
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(backColor)
@@ -42,107 +45,78 @@ struct Step4Lab: View {
                         Text("Background ")
                             .foregroundColor(Color(hex: "121C72"))
                         Spacer()
-                        ColorCircle(hexnum: "4C48FF")
+                        ColorCircle(hexnum: colorList[0])
                             .onTapGesture {
-                                self.backColor = Color(hex: "4C48FF")
+                                self.backColor = Color(hex: colorList[0])
+                                self.backResult = colorList[0]
                             }
-                        ColorCircle(hexnum: "00E878")
+                        ColorCircle(hexnum: colorList[1])
                             .onTapGesture {
-                                self.backColor = Color(hex: "00E878")
+                                self.backColor = Color(hex: colorList[1])
+                                self.backResult = colorList[1]
                             }
-                        ColorCircle(hexnum: "E6FF9F")
+                        ColorCircle(hexnum: colorList[2])
                             .onTapGesture {
-                                self.backColor = Color(hex: "E6FF9F")
+                                self.backColor = Color(hex: colorList[2])
+                                self.backResult = colorList[2]
                             }
-                        ColorCircle(hexnum: "FFFFFF")
+                        ColorCircle(hexnum: colorList[3])
                             .onTapGesture {
-                                self.backColor = Color(hex: "FFFFFF")
+                                self.backColor = Color(hex: colorList[3])
+                                self.backResult = colorList[3]
                             }
-                        ColorCircle(hexnum: "FFADAD")
+                        ColorCircle(hexnum: colorList[4])
                             .onTapGesture {
-                                self.backColor = Color(hex: "FFADAD")
+                                self.backColor = Color(hex: colorList[4])
+                                self.backResult = colorList[4]
                             }
-                        ColorCircle(hexnum: "FF0000")
+                        ColorCircle(hexnum: colorList[5])
                             .onTapGesture {
-                                self.backColor = Color(hex: "FF0000")
+                                self.backColor = Color(hex: colorList[5])
+                                self.backResult = colorList[5]
                             }
                     }
                     .padding()
-                    
                     HStack{
                         Text("Arrow")
                             .foregroundColor(Color(hex: "121C72"))
                         Spacer()
-                        ColorCircle(hexnum: "4C48FF")
+                        ColorCircle(hexnum: colorList[0])
                             .onTapGesture {
-                                self.arrowColor = Color(hex: "4C48FF")
+                                self.arrowColor = Color(hex: colorList[0])
+                                self.arrowResult = colorList[0]
                             }
-                        ColorCircle(hexnum: "00E878")
+                        ColorCircle(hexnum: colorList[1])
                             .onTapGesture {
-                                self.arrowColor = Color(hex: "00E878")
+                                self.arrowColor = Color(hex: colorList[1])
+                                self.arrowResult = colorList[1]
                             }
-                        ColorCircle(hexnum: "E6FF9F")
+                        ColorCircle(hexnum: colorList[2])
                             .onTapGesture {
-                                self.arrowColor = Color(hex: "E6FF9F")
+                                self.arrowColor = Color(hex: colorList[2])
+                                self.arrowResult = colorList[2]
                             }
-                        ColorCircle(hexnum: "FFFFFF")
+                        ColorCircle(hexnum: colorList[3])
                             .onTapGesture {
-                                self.arrowColor = Color(hex: "FFFFFF")
+                                self.arrowColor = Color(hex: colorList[3])
+                                self.arrowResult = colorList[3]
                             }
-                        ColorCircle(hexnum: "FFADAD")
+                        ColorCircle(hexnum: colorList[4])
                             .onTapGesture {
-                                self.arrowColor = Color(hex: "FFADAD")
+                                self.arrowColor = Color(hex: colorList[4])
+                                self.arrowResult = colorList[4]
                             }
-                        ColorCircle(hexnum: "FF0000")
+                        ColorCircle(hexnum: colorList[5])
                             .onTapGesture {
-                                self.arrowColor = Color(hex: "FF0000")
+                                self.arrowColor = Color(hex: colorList[5])
+                                self.arrowResult = colorList[5]
                             }
-                        
-                        
-//                        Circle()
-//                            .fill(Color(hex: "4C48FF"))
-//                            .frame(width: 30)
-//                            .onTapGesture {
-//                                self.arrowColor = Color(hex: "4C48FF")
-//                            }
-//                        Circle()
-//                            .fill(Color(hex: "00E878"))
-//                            .frame(width: 30)
-//                            .onTapGesture {
-//                                self.arrowColor = Color(hex: "00E878")
-//                            }
-//                        Circle()
-//                            .fill(Color(hex: "E6FF9F"))
-//                            .frame(width: 30)
-//                            .onTapGesture {
-//                                self.arrowColor = Color(hex: "E6FF9F")
-//                            }
-//
-//                        Circle()
-//                            .fill(Color(hex: "FFFFFF"))
-//                            .frame(width: 30)
-//                            .onTapGesture {
-//                                self.arrowColor = Color(hex: "FFFFFF")
-//                            }
-//                        Circle()
-//                            .fill(Color(hex: "FFADAD"))
-//                            .frame(width: 30)
-//                            .onTapGesture {
-//                                self.arrowColor = Color(hex: "FFADAD")
-//                            }
-//                        Circle()
-//                            .fill(Color(hex: "FF0000"))
-//                            .frame(width: 30)
-//                            .onTapGesture {
-//                                self.arrowColor = Color(hex: "FF0000")
-//                            }
-                        
                     }
                     .padding()
                 }
             }
             HStack{
-                NavigationLink(destination: Step4Success(), isActive: $labCheck){
+                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult), isActive: $labCheck){
                     SmallNavyButton(name: "Check", action: {labCheck = true})
                 }
             }

@@ -12,6 +12,6 @@ struct ColorCircle: View{
 }
 struct ColorCircle_Previews: PreviewProvider {
     static var previews: some View {
-        ColorCircle(hexnum: "E6FF9F")
+        ColorCircle(hexnum: "FFADAD")
     }
 }

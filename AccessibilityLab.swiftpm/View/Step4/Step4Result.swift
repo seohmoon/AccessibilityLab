@@ -1,7 +1,10 @@
 import SwiftUI
 
-struct Step4Success: View {
+struct Step4Result: View {
     @State var labRetry: Bool = false
+    @State var labHome: Bool = false
+    @Binding var backResult : String
+    @Binding var arrowResult : String
     
     var body: some View {
         
@@ -28,9 +31,14 @@ struct Step4Success: View {
                         .font(.system(size: 24))
                         .foregroundColor(Color(hex: "121C72"))
                     
-                    Image(systemName: "arrow.forward.square.fill")
-                        .resizable()
-                        .frame(width: 100, height: 80)
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(hex: backResult))
+                            .frame(width: 100, height: 80)
+                        Text("➔")
+                            .font(.system(size: 65))
+                            .foregroundColor(Color(hex: arrowResult))
+                    }
                     
                     Text("SUCCESS")
                         .font(.system(size: 24))
@@ -42,15 +50,17 @@ struct Step4Success: View {
             HStack{
                 NavigationLink(destination: Step4Lab(), isActive: $labRetry){
                     SmallNavyButton(name: "Retry", action: {labRetry = true})
-                    SmallNavyButton(name: "Home", action: {})
+                }
+                NavigationLink(destination: HomeView(), isActive: $labHome){
+                    SmallNavyButton(name: "Home", action: {labHome = true})
                 }
             }
         }
     }
 }
 
-struct Step4Success_Previews: PreviewProvider {
-    static var previews: some View {
-        Step4Success()
-    }
-}
+//struct Step4Result_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Step4Result("4C48FF", "FFFFFF")
+//    }
+//}

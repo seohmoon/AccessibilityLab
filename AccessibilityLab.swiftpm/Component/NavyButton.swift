@@ -23,6 +23,6 @@ struct NavyButton: View{
 }
 struct NavyButtonPreviewProvider_Previews: PreviewProvider {
     static var previews: some View {
-        NavyButton(name: "nickname \n hello "){}
+        NavyButton(name: "step1 \n hello "){}
     }
 }
