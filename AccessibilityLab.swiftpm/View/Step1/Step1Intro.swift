@@ -1,8 +1,6 @@
 import SwiftUI
 
-struct Step3Intro: View {
-    @State var quizStart: Bool = false
-    
+struct Step1Intro: View {
     var body: some View {
         VStack{
 //            HStack{
@@ -12,28 +10,27 @@ struct Step3Intro: View {
 //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
 //                Spacer()
 //            }
-            Text("Step3")
+            Text("Step1")
                 .font(.system(size: 38))
                 .foregroundColor(Color(hex: "121C72"))
-            Text("Take a Quiz and Review")
+            Text("What is Accessibility?")
                 .font(.system(size: 28))
-            Image("s3intro")
+            Image("s1intro")
                 .resizable()
-                .frame(width: 276, height: 260)
-            Text("Welcome")
+                .frame(width: 296, height: 292)
+            Text("Design with accessibility in mind.")
                 .font(.system(size: 20))
             Text("Let's review what we studied in step 2. \nHere are a few examples. \nWhich display is considered accessiblility? \nChoose the answer.")
-            HStack{
-                NavigationLink(destination: Step3Quiz(), isActive: $quizStart){
-                    SmallNavyButton(name: "Start", action: {quizStart = true})
-                }
-            }
+//            HStack{
+//                SmallNavyButton(name: "Start", action: {})
+//            }
         }
     }
 }
 
-struct Step3Intro_Previews: PreviewProvider {
+struct Step1Intro_Previews: PreviewProvider {
     static var previews: some View {
-        Step3Intro()
+        Step1Intro()
     }
 }
+

@@ -10,7 +10,7 @@
 //public struct FontName {
 //    static var jeju = "EF_jejudoldam"
 //    static var santokki = "HSSantokki-Regular"
-//    static var mysen = "UhBee mysen"
-//    static var kangja = "UhBee Kang-Ja"
-//    static var kangjaBold = "UhBee Kang-Ja Bold"
+//    static var pretendard = "PretendardVariable"
+////    static var kangja = "UhBee Kang-Ja"
+////    static var kangjaBold = "UhBee Kang-Ja Bold"
 //}

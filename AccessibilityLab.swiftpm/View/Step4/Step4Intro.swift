@@ -1,15 +1,17 @@
 import SwiftUI
 
 struct Step4Intro: View {
+    @State var labStart: Bool = false
+    
     var body: some View {
         VStack{
-            HStack{
-                Image(systemName: "chevron.left")
-                    .resizable()
-                    .frame(width: 20, height: 20, alignment: .leading)
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-                Spacer()
-            }
+            //            HStack{
+            //                Image(systemName: "chevron.left")
+            //                    .resizable()
+            //                    .frame(width: 20, height: 20, alignment: .leading)
+            //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+            //                Spacer()
+            //            }
             Text("Step4")
                 .font(.system(size: 38))
                 .foregroundColor(Color(hex: "121C72"))
@@ -22,7 +24,9 @@ struct Step4Intro: View {
                 .font(.system(size: 20))
             Text("It's finally the last step.\nLet's experiment with color combinations considering accessibility based on what we learned")
             HStack{
-                SmallNavyButton(name: "Start", action: {})
+                NavigationLink(destination: Step4Lab(), isActive: $labStart){
+                    SmallNavyButton(name: "Start", action: {labStart = true})
+                }
             }
         }
     }

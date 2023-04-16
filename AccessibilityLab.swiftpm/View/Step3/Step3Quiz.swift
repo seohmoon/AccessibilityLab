@@ -3,13 +3,13 @@ import SwiftUI
 struct Step3Quiz: View {
     var body: some View {
         VStack{
-            HStack{
-                Image(systemName: "chevron.left")
-                    .resizable()
-                    .frame(width: 20, height: 20, alignment: .leading)
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-                Spacer()
-            }
+//            HStack{
+//                Image(systemName: "chevron.left")
+//                    .resizable()
+//                    .frame(width: 20, height: 20, alignment: .leading)
+//                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+//                Spacer()
+//            }
             Text("Step3")
                 .font(.system(size: 38))
                 .foregroundColor(Color(hex: "121C72"))
