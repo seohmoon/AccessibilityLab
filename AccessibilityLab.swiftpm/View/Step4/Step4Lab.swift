@@ -8,6 +8,19 @@ struct Step4Lab: View {
     @State var arrowResult: String = "FFFFFF"
     @State var backColor = Color(hex: "4C48FF")
     @State var arrowColor = Color(hex: "FFFFFF")
+    @State var nextValue: Int = 0
+    
+    func changeNextValue() -> Int {
+        let colorSet = Set([backResult, arrowResult])
+        if backResult == arrowResult {
+            return 1
+        } else if colorSet.contains(colorList[2]) && colorSet.contains(colorList[3]) {
+            return 2
+        } else if (colorSet.contains(colorList[0]) && colorSet.contains(colorList[3])) || (colorSet.contains(colorList[0]) && colorSet.contains(colorList[4])) || (colorSet.contains(colorList[0]) && colorSet.contains(colorList[5])) || (colorSet.contains(colorList[1]) && colorSet.contains(colorList[3])) || (colorSet.contains(colorList[1]) && colorSet.contains(colorList[4])) || (colorSet.contains(colorList[1]) && colorSet.contains(colorList[5])) {
+            return 3
+        }
+        return 0
+    }
     
     var body: some View {
         VStack{
@@ -40,84 +53,38 @@ struct Step4Lab: View {
                             .font(.system(size: 65))
                             .foregroundColor(arrowColor)
                     }
-                    
                     HStack{
                         Text("Background ")
                             .foregroundColor(Color(hex: "121C72"))
                         Spacer()
-                        ColorCircle(hexnum: colorList[0])
-                            .onTapGesture {
-                                self.backColor = Color(hex: colorList[0])
-                                self.backResult = colorList[0]
-                            }
-                        ColorCircle(hexnum: colorList[1])
-                            .onTapGesture {
-                                self.backColor = Color(hex: colorList[1])
-                                self.backResult = colorList[1]
-                            }
-                        ColorCircle(hexnum: colorList[2])
-                            .onTapGesture {
-                                self.backColor = Color(hex: colorList[2])
-                                self.backResult = colorList[2]
-                            }
-                        ColorCircle(hexnum: colorList[3])
-                            .onTapGesture {
-                                self.backColor = Color(hex: colorList[3])
-                                self.backResult = colorList[3]
-                            }
-                        ColorCircle(hexnum: colorList[4])
-                            .onTapGesture {
-                                self.backColor = Color(hex: colorList[4])
-                                self.backResult = colorList[4]
-                            }
-                        ColorCircle(hexnum: colorList[5])
-                            .onTapGesture {
-                                self.backColor = Color(hex: colorList[5])
-                                self.backResult = colorList[5]
-                            }
-                    }
+                        ForEach(0..<colorList.count) { index in
+                                ColorCircle(hexnum: colorList[index])
+                                    .onTapGesture {
+                                        self.backColor = Color(hex: colorList[index])
+                                        self.backResult = colorList[index]
+                                    }
+                            }                    }
                     .padding()
                     HStack{
                         Text("Arrow")
                             .foregroundColor(Color(hex: "121C72"))
                         Spacer()
-                        ColorCircle(hexnum: colorList[0])
-                            .onTapGesture {
-                                self.arrowColor = Color(hex: colorList[0])
-                                self.arrowResult = colorList[0]
-                            }
-                        ColorCircle(hexnum: colorList[1])
-                            .onTapGesture {
-                                self.arrowColor = Color(hex: colorList[1])
-                                self.arrowResult = colorList[1]
-                            }
-                        ColorCircle(hexnum: colorList[2])
-                            .onTapGesture {
-                                self.arrowColor = Color(hex: colorList[2])
-                                self.arrowResult = colorList[2]
-                            }
-                        ColorCircle(hexnum: colorList[3])
-                            .onTapGesture {
-                                self.arrowColor = Color(hex: colorList[3])
-                                self.arrowResult = colorList[3]
-                            }
-                        ColorCircle(hexnum: colorList[4])
-                            .onTapGesture {
-                                self.arrowColor = Color(hex: colorList[4])
-                                self.arrowResult = colorList[4]
-                            }
-                        ColorCircle(hexnum: colorList[5])
-                            .onTapGesture {
-                                self.arrowColor = Color(hex: colorList[5])
-                                self.arrowResult = colorList[5]
+                        ForEach(0..<colorList.count) { index in
+                                ColorCircle(hexnum: colorList[index])
+                                    .onTapGesture {
+                                        self.arrowColor = Color(hex: colorList[index])
+                                        self.arrowResult = colorList[index]
+                                    }
                             }
                     }
                     .padding()
                 }
             }
             HStack{
-                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult), isActive: $labCheck){
-                    SmallNavyButton(name: "Check", action: {labCheck = true})
+                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult, nextValue: $nextValue), isActive: $labCheck){
+                    SmallNavyButton(name: "Check", action: {labCheck = true
+                        nextValue = changeNextValue()
+                    })
                 }
             }
         }

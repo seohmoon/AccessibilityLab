@@ -5,6 +5,7 @@ struct Step4Result: View {
     @State var labHome: Bool = false
     @Binding var backResult : String
     @Binding var arrowResult : String
+    @Binding var nextValue : Int
     
     var body: some View {
         
@@ -21,7 +22,6 @@ struct Step4Result: View {
                 .foregroundColor(Color(hex: "121C72"))
             Text("Let's do it in the Lab ")
                 .font(.system(size: 28))
-            
             ZStack{
                 Rectangle()
                     .fill(Color(hex: "EFEFEF"))
@@ -39,12 +39,31 @@ struct Step4Result: View {
                             .font(.system(size: 65))
                             .foregroundColor(Color(hex: arrowResult))
                     }
-                    
-                    Text("SUCCESS")
-                        .font(.system(size: 24))
-                        .foregroundColor(Color(hex: "121C72"))
-                    Text("You have mastered accessibility!")
-                        .foregroundColor(Color(hex: "121C72"))
+                    if nextValue == 1 {
+                        Text("Fail")
+                            .font(.system(size: 24))
+                            .foregroundColor(Color(hex: "FF0000"))
+                        Text("Same")
+                            .foregroundColor(Color(hex: "FF0000"))
+                    } else if nextValue == 2 {
+                        Text("Fail")
+                            .font(.system(size: 24))
+                            .foregroundColor(Color(hex: "FF0000"))
+                        Text("green red")
+                            .foregroundColor(Color(hex: "FF0000"))
+                    } else if nextValue == 3 {
+                        Text("SUCCESS")
+                            .font(.system(size: 24))
+                            .foregroundColor(Color(hex: "121C72"))
+                        Text("You have mastered accessibility!")
+                            .foregroundColor(Color(hex: "121C72"))
+                    } else {
+                        Text("Fail")
+                            .font(.system(size: 24))
+                            .foregroundColor(Color(hex: "FF0000"))
+                        Text("less")
+                            .foregroundColor(Color(hex: "FF0000"))
+                    }
                 }
             }
             HStack{
