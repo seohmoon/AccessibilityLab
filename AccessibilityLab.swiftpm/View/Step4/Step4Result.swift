@@ -7,6 +7,11 @@ struct Step4Result: View {
     @Binding var arrowResult : String
     @Binding var nextValue : Int
     
+    @Binding var goHome : Bool
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+//
+    
     var body: some View {
         
         VStack{
@@ -67,12 +72,23 @@ struct Step4Result: View {
                 }
             }
             HStack{
-                NavigationLink(destination: Step4Lab(), isActive: $labRetry){
-                    SmallNavyButton(name: "Retry", action: {labRetry = true})
+                NavigationLink(destination: Step4Lab(goHome: $goHome), isActive: $labRetry){
+                    SmallNavyButton(name: "Retry", action: {presentationMode.wrappedValue.dismiss()})
                 }
-                NavigationLink(destination: HomeView(), isActive: $labHome){
-                    SmallNavyButton(name: "Home", action: {labHome = true})
-                }
+                
+                
+//                NavigationLink(destination: HomeView(), isActive: $labHome){
+//                    SmallNavyButton(name: "Home", action: {labHome = true})
+//                }
+                SmallNavyButton(name: "Home", action: {goHome = false})
+                
+                
+//                    .background(
+//                        NavigationLink(
+//                            destination: Step4Lab(goHome: $labStart), isActive: $labStart, label: {EmptyView()}
+//                        )
+//                        .isDetailLink(false)
+//                    )
             }
         }
     }

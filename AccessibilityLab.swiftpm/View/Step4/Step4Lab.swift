@@ -10,6 +10,9 @@ struct Step4Lab: View {
     @State var arrowColor = Color(hex: "FFFFFF")
     @State var nextValue: Int = 0
     
+    @Binding var goHome : Bool
+    
+    
     func changeNextValue() -> Int {
         let colorSet = Set([backResult, arrowResult])
         if backResult == arrowResult {
@@ -24,13 +27,6 @@ struct Step4Lab: View {
     
     var body: some View {
         VStack{
-            //            HStack{
-            //                Image(systemName: "chevron.left")
-            //                    .resizable()
-            //                    .frame(width: 20, height: 20, alignment: .leading)
-            //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-            //                Spacer()
-            //            }
             Text("Step 4")
                 .foregroundColor(Color(hex: "121C72"))
                 .font(.custom("EF_jejudoldam", size: 31))
@@ -88,18 +84,27 @@ struct Step4Lab: View {
                 }
             }
             HStack{
-                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult, nextValue: $nextValue), isActive: $labCheck){
-                    SmallNavyButton(name: "Check", action: {labCheck = true
-                        nextValue = changeNextValue()
-                    })
-                }
+//                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult, nextValue: $nextValue), isActive: $labCheck){
+//                    SmallNavyButton(name: "Check", action: {labCheck = true
+//                        nextValue = changeNextValue()
+//                    })
+//                }
+                
+                SmallNavyButton(name: "Check", action: {labCheck = true
+                    nextValue = changeNextValue()})
+                    .background(
+                        NavigationLink(
+                            destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult, nextValue: $nextValue, goHome: $goHome), isActive: $labCheck, label: {EmptyView()}
+                        )
+                        .isDetailLink(false)
+                    )
             }
         }
     }
 }
 
-struct Step4Lab_Previews: PreviewProvider {
-    static var previews: some View {
-        Step4Lab()
-    }
-}
+//struct Step4Lab_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Step4Lab()
+//    }
+//}

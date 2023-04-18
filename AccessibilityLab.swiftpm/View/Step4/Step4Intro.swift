@@ -3,6 +3,8 @@ import SwiftUI
 struct Step4Intro: View {
     @State var labStart: Bool = false
     
+    @Binding var goHome: Bool
+    
     var body: some View {
         VStack{
             Text("Step 4")
@@ -27,16 +29,24 @@ struct Step4Intro: View {
             
                 .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
             HStack{
-                NavigationLink(destination: Step4Lab(), isActive: $labStart){
-                    SmallNavyButton(name: "Start", action: {labStart = true})
-                }
+//                NavigationLink(destination: Step4Lab(), isActive: $labStart){
+//                    SmallNavyButton(name: "Start", action: {labStart = true})
+//                }
+                
+                SmallNavyButton(name: "Start", action: {labStart = true})
+                    .background(
+                        NavigationLink(
+                            destination: Step4Lab(goHome: $goHome), isActive: $labStart, label: {EmptyView()}
+                        )
+                        .isDetailLink(false)
+                    )
             }
         }
     }
 }
 
-struct Step4Intro_Previews: PreviewProvider {
-    static var previews: some View {
-        Step4Intro()
-    }
-}
+//struct Step4Intro_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Step4Intro(false)
+//    }
+//}
