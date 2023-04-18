@@ -16,6 +16,7 @@ struct NavyButton: View{
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex:"373F86"))
                         .frame(width: 270,height: 45)
                  Text(name).foregroundColor(.white)
+                        .font(.custom("The Jamsil 4 Medium", size: 16))
                 }.frame(width: 280,height: 50)
             }
         )

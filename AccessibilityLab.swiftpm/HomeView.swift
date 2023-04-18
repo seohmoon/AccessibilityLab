@@ -10,8 +10,7 @@ struct HomeView: View {
         NavigationView{
             VStack {
                 Text("Accessibility Lab")
-    //                .font(.system(size: 38))
-                    .font(.custom("HSSantokki-Regular", size: 30))
+                    .font(.custom("EF_jejudoldam", size: 31))
                     .padding()
                 VStack{
                     Text("Click the button to follow the steps.")

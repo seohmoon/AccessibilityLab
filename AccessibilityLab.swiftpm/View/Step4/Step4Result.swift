@@ -10,26 +10,25 @@ struct Step4Result: View {
     var body: some View {
         
         VStack{
-            //            HStack{
-            //                Image(systemName: "chevron.left")
-            //                    .resizable()
-            //                    .frame(width: 20, height: 20, alignment: .leading)
-            //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-            //                Spacer()
-            //            }
-            Text("Step4")
-                .font(.system(size: 38))
+            Text("Step 4")
                 .foregroundColor(Color(hex: "121C72"))
+                .font(.custom("EF_jejudoldam", size: 31))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: 5, trailing: 10))
             Text("Let's do it in the Lab ")
-                .font(.system(size: 28))
+                .font(.custom("The Jamsil 4 Medium", size: 29))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 35, bottom: 5, trailing: 10))
+            
             ZStack{
                 Rectangle()
                     .fill(Color(hex: "EFEFEF"))
                     .frame(height: 360)
                 VStack{
                     Text("Check the result.")
-                        .font(.system(size: 24))
                         .foregroundColor(Color(hex: "121C72"))
+                        .font(.custom("The Jamsil 4 Medium", size: 23))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                     
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
@@ -39,27 +38,28 @@ struct Step4Result: View {
                             .font(.system(size: 65))
                             .foregroundColor(Color(hex: arrowResult))
                     }
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
                     if nextValue == 1 {
                         Text("Fail")
-                            .font(.system(size: 24))
+                            .font(.custom("The Jamsil 4 Medium", size: 23))
                             .foregroundColor(Color(hex: "FF0000"))
                         Text("Same")
                             .foregroundColor(Color(hex: "FF0000"))
                     } else if nextValue == 2 {
                         Text("Fail")
-                            .font(.system(size: 24))
+                            .font(.custom("The Jamsil 4 Medium", size: 23))
                             .foregroundColor(Color(hex: "FF0000"))
                         Text("green red")
                             .foregroundColor(Color(hex: "FF0000"))
                     } else if nextValue == 3 {
                         Text("SUCCESS")
-                            .font(.system(size: 24))
+                            .font(.custom("The Jamsil 4 Medium", size: 23))
                             .foregroundColor(Color(hex: "121C72"))
                         Text("You have mastered accessibility!")
                             .foregroundColor(Color(hex: "121C72"))
                     } else {
                         Text("Fail")
-                            .font(.system(size: 24))
+                            .font(.custom("The Jamsil 4 Medium", size: 23))
                             .foregroundColor(Color(hex: "FF0000"))
                         Text("less")
                             .foregroundColor(Color(hex: "FF0000"))

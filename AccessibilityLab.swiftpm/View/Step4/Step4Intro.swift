@@ -5,24 +5,27 @@ struct Step4Intro: View {
     
     var body: some View {
         VStack{
-            //            HStack{
-            //                Image(systemName: "chevron.left")
-            //                    .resizable()
-            //                    .frame(width: 20, height: 20, alignment: .leading)
-            //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-            //                Spacer()
-            //            }
-            Text("Step4")
-                .font(.system(size: 38))
+            Text("Step 4")
                 .foregroundColor(Color(hex: "121C72"))
+                .font(.custom("EF_jejudoldam", size: 31))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: 5, trailing: 10))
             Text("Let's do it in the Lab ")
-                .font(.system(size: 28))
+                .font(.custom("The Jamsil 4 Medium", size: 29))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 35, bottom: 5, trailing: 10))
+            
             Image("s4intro")
                 .resizable()
                 .frame(width: 379, height: 242)
             Text("Congratulations")
-                .font(.system(size: 20))
+                .font(.custom("The Jamsil 4 Medium", size: 23))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: 5, trailing: 10))
+                
             Text("It's finally the last step.\nLet's experiment with color combinations considering accessibility based on what we learned")
+            
+                .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
             HStack{
                 NavigationLink(destination: Step4Lab(), isActive: $labStart){
                     SmallNavyButton(name: "Start", action: {labStart = true})

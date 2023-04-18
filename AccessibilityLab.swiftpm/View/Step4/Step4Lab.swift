@@ -31,11 +31,15 @@ struct Step4Lab: View {
             //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
             //                Spacer()
             //            }
-            Text("Step4")
-                .font(.system(size: 38))
+            Text("Step 4")
                 .foregroundColor(Color(hex: "121C72"))
+                .font(.custom("EF_jejudoldam", size: 31))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: 5, trailing: 10))
             Text("Let's do it in the Lab ")
-                .font(.system(size: 28))
+                .font(.custom("The Jamsil 4 Medium", size: 29))
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 35, bottom: 5, trailing: 10))
             
             ZStack{
                 Rectangle()
@@ -43,8 +47,9 @@ struct Step4Lab: View {
                     .frame(height: 360)
                 VStack{
                     Text("Change the color of the button")
-                        .font(.system(size: 24))
+                        .font(.custom("The Jamsil 4 Medium", size: 23))
                         .foregroundColor(Color(hex: "121C72"))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(backColor)
@@ -56,6 +61,7 @@ struct Step4Lab: View {
                     HStack{
                         Text("Background ")
                             .foregroundColor(Color(hex: "121C72"))
+                            .font(.custom("The Jamsil 4 Medium", size: 20))
                         Spacer()
                         ForEach(0..<colorList.count) { index in
                                 ColorCircle(hexnum: colorList[index])
@@ -68,6 +74,7 @@ struct Step4Lab: View {
                     HStack{
                         Text("Arrow")
                             .foregroundColor(Color(hex: "121C72"))
+                            .font(.custom("The Jamsil 4 Medium", size: 20))
                         Spacer()
                         ForEach(0..<colorList.count) { index in
                                 ColorCircle(hexnum: colorList[index])

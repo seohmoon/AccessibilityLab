@@ -3,10 +3,8 @@ import SwiftUI
 @main
 struct MyApp: App {
     init() {
-//        CustomFontA.registerFonts(fontName: "EF_jejudoldam")
-//        CustomFontB.registerFonts(fontName: "HSSantokki-Regular")
-//        CustomFontC.registerFonts(fontName: "PretendardVariable")
-        FontManager.registerFonts()
+        CustomFontManager.registerFonts(fontName: "EF_jejudoldam")
+        CustomFontManager.registerFonts(fontName: "The Jamsil 4 Medium")
     }
     var body: some Scene {
         WindowGroup {

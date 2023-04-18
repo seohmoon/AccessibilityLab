@@ -17,9 +17,9 @@ struct Step3Result: View {
 //                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
 //                Spacer()
 //            }
-            Text("Step3")
-                .font(.system(size: 38))
+            Text("Step 3")
                 .foregroundColor(Color(hex: "121C72"))
+                .font(.custom("EF_jejudoldam", size: 31))
             Text("Take a Quiz and Review")
                 .font(.system(size: 28))
             Text("Score")

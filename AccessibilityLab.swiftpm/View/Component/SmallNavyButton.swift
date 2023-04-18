@@ -19,7 +19,7 @@ struct SmallNavyButton: View {
                         .frame(width: 130,height: 58)
                  Text(name)
                         .foregroundColor(.white)
-                        .font(.system(size: 30))
+                        .font(.custom("The Jamsil 4 Medium", size: 29))
                 }
             }
         )
