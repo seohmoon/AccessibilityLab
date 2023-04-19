@@ -6,7 +6,7 @@ struct ColorCircle: View{
     var body: some View{
         Circle()
             .fill(Color(hex: hexnum))
-            .frame(width: 30)
+            .frame(width: 25)
             
     }
 }

@@ -5,9 +5,9 @@ let colorList = ["FFFFFF", "FFFA79", "EE8B48","717C24","4C48FF","9E00FF"]
 struct Step4Lab: View {
     @State var labCheck: Bool = false
     @State var backResult: String = "4C48FF"
-    @State var arrowResult: String = "FFFFFF"
+    @State var arrowResult: String = "FFFA79"
     @State var backColor = Color(hex: "4C48FF")
-    @State var arrowColor = Color(hex: "FFFFFF")
+    @State var arrowColor = Color(hex: "FFFA79")
     @State var nextValue: Int = 0
     
     @Binding var goHome : Bool
@@ -40,59 +40,90 @@ struct Step4Lab: View {
             ZStack{
                 Rectangle()
                     .fill(Color(hex: "EFEFEF"))
-                    .frame(height: 360)
-                VStack{
-                    Text("Change the color of the button")
-                        .font(.custom("The Jamsil 4 Medium", size: 23))
-                        .foregroundColor(Color(hex: "121C72"))
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(backColor)
-                            .frame(width: 100, height: 80)
-                        Text("➔")
-                            .font(.system(size: 65))
-                            .foregroundColor(arrowColor)
-                    }
-                    HStack{
-                        Text("Background ")
-                            .foregroundColor(Color(hex: "121C72"))
-                            .font(.custom("The Jamsil 4 Medium", size: 20))
-                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                        Spacer()
-                        ForEach(0..<colorList.count) { index in
+                    .frame(height: 460)
+                ZStack{
+                    VStack{
+                        ZStack{
+                            Text("Change the color")
+                                .font(.custom("The Jamsil 4 Medium", size: 25))
+                                .foregroundColor(Color(hex: "121C72"))
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 330, trailing: 0))
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.black)
+                                .frame(width: 130, height: 230)
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(arrowColor)
+                                    .frame(width: 120, height: 220)
+                                HStack{
+                                    Image(systemName: "chevron.left.square.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20)
+                                        .foregroundColor(backColor)
+                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 180, trailing: 60))
+                                    
+                                    Image(systemName: "person.circle.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20)
+                                        .foregroundColor(backColor)
+                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 180, trailing: 0))
+                                    
+                                }.frame(width: 120, height: 220)
+                            }
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(width: 120, height: 140)
+                            Text("Hello. \nThank you for your email.\nI'd like to change the reservation date to the next day, is it possible?\nPlease reply.\n")
+                                .font(.system(size: 10, weight: .medium))
+                                .frame(width: 120, height: 140)
+                                .padding(EdgeInsets(top: 140, leading: 95, bottom: 150, trailing: 90))
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(backColor)
+                                    .frame(width: 50, height: 30)
+                                Text("Send")
+                                    .font(.system(size: 15, weight: .medium))
+                                    .foregroundColor(arrowColor)
+                            }.padding(EdgeInsets(top: 180, leading: 0, bottom: 0, trailing: 0))
+                        }.padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                        
+                        HStack{
+                            Text("Button")
+                                .foregroundColor(Color(hex: "121C72"))
+                                .font(.custom("The Jamsil 4 Medium", size: 20))
+                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                            Spacer()
+                            ForEach(0..<colorList.count) { index in
                                 ColorCircle(hexnum: colorList[index])
                                     .onTapGesture {
                                         self.backColor = Color(hex: colorList[index])
                                         self.backResult = colorList[index]
                                     }
-                            }                    }
-                    .padding()
-                    HStack{
-                        Text("Arrow")
-                            .foregroundColor(Color(hex: "121C72"))
-                            .font(.custom("The Jamsil 4 Medium", size: 20))
-                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                        Spacer()
-                        ForEach(0..<colorList.count) { index in
+                            }
+                        }
+                        .padding(EdgeInsets(top: -100, leading: 15, bottom: 0, trailing: 15))
+                        HStack{
+                            Text("Background")
+                                .foregroundColor(Color(hex: "121C72"))
+                                .font(.custom("The Jamsil 4 Medium", size: 20))
+                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                            Spacer()
+                            ForEach(0..<colorList.count) { index in
                                 ColorCircle(hexnum: colorList[index])
                                     .onTapGesture {
                                         self.arrowColor = Color(hex: colorList[index])
                                         self.arrowResult = colorList[index]
                                     }
                             }
+                        }
+                        .padding(EdgeInsets(top: -70, leading: 15, bottom: 0, trailing: 15))
                     }
-                    .padding()
                 }
             }
             .padding(EdgeInsets(top: 15, leading: 0, bottom: 30, trailing: 0))
             HStack{
-//                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult, nextValue: $nextValue), isActive: $labCheck){
-//                    SmallNavyButton(name: "Check", action: {labCheck = true
-//                        nextValue = changeNextValue()
-//                    })
-//                }
-                
                 SmallNavyButton(name: "Check", action: {labCheck = true
                     nextValue = changeNextValue()})
                     .background(
