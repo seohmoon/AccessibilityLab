@@ -19,8 +19,8 @@ let package = Package(
             bundleIdentifier: "seohmoon.AccessibilityLab",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .asset("AppIcon"),
-            accentColor: .presetColor(.blue),
+            appIcon: .placeholder(icon: .twoPeople),
+            accentColor: .presetColor(.cyan),
             supportedDeviceFamilies: [
                 .pad,
                 .phone

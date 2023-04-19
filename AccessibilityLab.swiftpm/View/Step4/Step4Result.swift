@@ -61,6 +61,8 @@ struct Step4Result: View {
                             .font(.custom("The Jamsil 4 Medium", size: 23))
                             .foregroundColor(Color(hex: "121C72"))
                         Text("You have mastered accessibility!")
+                            .font(.system(size: 18, weight: .medium))
+                            .lineSpacing(6)
                             .foregroundColor(Color(hex: "121C72"))
                     } else {
                         Text("Fail")
@@ -71,6 +73,7 @@ struct Step4Result: View {
                     }
                 }
             }
+            .padding(EdgeInsets(top: 15, leading: 0, bottom: 30, trailing: 0))
             HStack{
                 NavigationLink(destination: Step4Lab(goHome: $goHome), isActive: $labRetry){
                     SmallNavyButton(name: "Retry", action: {presentationMode.wrappedValue.dismiss()})

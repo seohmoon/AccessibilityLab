@@ -22,7 +22,7 @@ struct SmallNavyButton: View {
                         .font(.custom("The Jamsil 4 Medium", size: 29))
                 }
             }
-        )
+        ).padding(EdgeInsets(top: 4, leading: 20, bottom: 5, trailing: 20))
     }
 }
 

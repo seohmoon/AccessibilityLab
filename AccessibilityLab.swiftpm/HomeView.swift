@@ -16,18 +16,32 @@ struct HomeView: View {
                 VStack{
                     Text("Click the button to follow the steps.")
                         .foregroundColor(Color(hex: "121C72"))
-                    NavigationLink(destination: Step1Intro(), isActive: $sp1){
-                        NavyButton(name: "Step 1 : What is Accessibility?", action: {sp1 = true})
-                    }
+                        .font(.system(size: 18, weight: .medium))
+                    
+                    NavyButton(name: "Step 1 : What is Accessibility?", action: {sp1 = true})
+                        .background(
+                            NavigationLink(
+                                destination: Step1Intro(goHome: $sp1), isActive: $sp1, label: {EmptyView()}
+                            )
+                            .isDetailLink(false)
+                        )
+                    
                     NavigationLink(destination: Step2Intro(), isActive: $sp2){
                         NavyButton(name: "Step 2 : Study about Guidelines", action: {sp2 = true})
                     }
-                    NavigationLink(destination: Step3Intro(), isActive: $sp3){
-                        NavyButton(name: "Step 3 : Take a Quiz and Review", action: {sp3 = true})
-                    }
-//                    NavigationLink(destination: Step4Intro(), isActive: $sp4){
-//                        NavyButton(name: "Step 4 : Let's do it in the Lab", action: {sp4 = true})
+                    
+                    NavyButton(name: "Step 3 : Take a Quiz and Review", action: {sp3 = true})
+                        .background(
+                            NavigationLink(
+                                destination: Step3Intro(goHome: $sp3), isActive: $sp3, label: {EmptyView()}
+                            )
+                            .isDetailLink(false)
+                        )
+                    
+//                    NavigationLink(destination: Step3Intro(), isActive: $sp3){
+//                        NavyButton(name: "Step 3 : Take a Quiz and Review", action: {sp3 = true})
 //                    }
+
                     NavyButton(name: "Step 4 : Let's do it in the Lab", action: {sp4 = true})
                         .background(
                             NavigationLink(

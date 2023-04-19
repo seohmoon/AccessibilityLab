@@ -8,9 +8,9 @@ struct NavyButton: View{
             action:action,
             label:{
                 ZStack{
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "121C72")).offset(x:-4,y:5)
+                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "121C72")).offset(x:-3,y:4)
                     
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "FFFFFF"))
+                    RoundedRectangle(cornerSize: CGSize(width: 9, height: 9)).foregroundColor(Color(hex: "FFFFFF"))
                     
                     
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex:"373F86"))
@@ -18,6 +18,7 @@ struct NavyButton: View{
                  Text(name).foregroundColor(.white)
                         .font(.custom("The Jamsil 4 Medium", size: 16))
                 }.frame(width: 280,height: 50)
+                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 5, trailing: 0))
             }
         )
     }

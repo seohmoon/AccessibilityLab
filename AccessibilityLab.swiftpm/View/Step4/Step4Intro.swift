@@ -26,8 +26,9 @@ struct Step4Intro: View {
                 .padding(EdgeInsets(top: 10, leading: 30, bottom: 5, trailing: 10))
                 
             Text("It's finally the last step.\nLet's experiment with color combinations considering accessibility based on what we learned")
-            
-                .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                .font(.system(size: 17, weight: .medium))
+                .lineSpacing(6)
+                .padding(EdgeInsets(top: 5, leading: 30, bottom: 10, trailing: 30))
             HStack{
 //                NavigationLink(destination: Step4Lab(), isActive: $labStart){
 //                    SmallNavyButton(name: "Start", action: {labStart = true})

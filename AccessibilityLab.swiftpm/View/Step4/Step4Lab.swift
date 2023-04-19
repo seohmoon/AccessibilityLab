@@ -58,6 +58,7 @@ struct Step4Lab: View {
                         Text("Background ")
                             .foregroundColor(Color(hex: "121C72"))
                             .font(.custom("The Jamsil 4 Medium", size: 20))
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                         Spacer()
                         ForEach(0..<colorList.count) { index in
                                 ColorCircle(hexnum: colorList[index])
@@ -71,6 +72,7 @@ struct Step4Lab: View {
                         Text("Arrow")
                             .foregroundColor(Color(hex: "121C72"))
                             .font(.custom("The Jamsil 4 Medium", size: 20))
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                         Spacer()
                         ForEach(0..<colorList.count) { index in
                                 ColorCircle(hexnum: colorList[index])
@@ -83,6 +85,7 @@ struct Step4Lab: View {
                     .padding()
                 }
             }
+            .padding(EdgeInsets(top: 15, leading: 0, bottom: 30, trailing: 0))
             HStack{
 //                NavigationLink(destination: Step4Result(backResult: $backResult, arrowResult: $arrowResult, nextValue: $nextValue), isActive: $labCheck){
 //                    SmallNavyButton(name: "Check", action: {labCheck = true
