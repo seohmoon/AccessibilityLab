@@ -79,20 +79,9 @@ struct Step2Explain: View {
                         .padding(EdgeInsets(top: 10, leading: 30, bottom: 20, trailing: 30))
                     
                 }
-                
-//                Text("Develop with accessibility in mind")
-//                    .font(.custom("The Jamsil 4 Medium", size: 20))
-//                Text("Approximately one in seven people have a disability that affects the way they interact with the world and their devices.\n\nPeople can experience disabilities at any age, for any duration, and at varying levels of severity. For example, situational disabilities — such as a wrist injury from a fall or voice loss from overuse — can affect the way almost everyone interacts with their devices at various times.")
-//                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 20, trailing: 20))
-//                SmallNavyButton(name: "Home", action: {})
+
             }
         }
     }
 }
-
-//struct Step2Explane_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Step2Explain(buttonNum: 1)
-//    }
-//}
 

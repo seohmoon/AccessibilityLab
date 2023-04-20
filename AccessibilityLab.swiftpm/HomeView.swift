@@ -37,10 +37,6 @@ struct HomeView: View {
                             )
                             .isDetailLink(false)
                         )
-                    
-//                    NavigationLink(destination: Step3Intro(), isActive: $sp3){
-//                        NavyButton(name: "Step 3 : Take a Quiz and Review", action: {sp3 = true})
-//                    }
 
                     RedButton(name: "Let's do it in the Lab", action: {sp4 = true})
                         .background(

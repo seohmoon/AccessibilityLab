@@ -120,19 +120,10 @@ struct Step4Result: View {
                     SmallNavyButton(name: "Retry", action: {presentationMode.wrappedValue.dismiss()})
                 }
                 
-                
-//                NavigationLink(destination: HomeView(), isActive: $labHome){
-//                    SmallNavyButton(name: "Home", action: {labHome = true})
-//                }
+
                 SmallNavyButton(name: "Home", action: {goHome = false})
                 
-                
-//                    .background(
-//                        NavigationLink(
-//                            destination: Step4Lab(goHome: $labStart), isActive: $labStart, label: {EmptyView()}
-//                        )
-//                        .isDetailLink(false)
-//                    )
+
             }
         }
     }

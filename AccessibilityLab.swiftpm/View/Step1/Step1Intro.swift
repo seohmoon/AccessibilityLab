@@ -1,10 +1,3 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by 🤦🏻‍♀️ 🤦🏻‍♀️ on 2023/04/19.
-//
-
 import SwiftUI
 
 struct Step1Intro: View {
@@ -57,8 +50,3 @@ struct Step1Intro: View {
     }
 }
 
-//struct Step1Intro_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Step1Intro()
-//    }
-//}

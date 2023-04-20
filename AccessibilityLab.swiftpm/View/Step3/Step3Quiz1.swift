@@ -52,9 +52,3 @@ struct Step3Quiz1: View {
         }
     }
 }
-
-//struct Step3Quiz1_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Step3Quiz1()
-//    }
-//}

@@ -35,9 +35,3 @@ struct Step3Intro: View {
         }
     }
 }
-
-//struct Step3Intro_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Step3Intro()
-//    }
-//}

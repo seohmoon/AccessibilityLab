@@ -30,9 +30,6 @@ struct Step4Intro: View {
                 .lineSpacing(6)
                 .padding(EdgeInsets(top: 5, leading: 30, bottom: 10, trailing: 30))
             HStack{
-//                NavigationLink(destination: Step4Lab(), isActive: $labStart){
-//                    SmallNavyButton(name: "Start", action: {labStart = true})
-//                }
                 
                 SmallNavyButton(name: "Start", action: {labStart = true})
                     .background(
