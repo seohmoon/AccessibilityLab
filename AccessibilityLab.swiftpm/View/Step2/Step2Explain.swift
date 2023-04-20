@@ -33,7 +33,15 @@ struct Step2Explain: View {
                 } else if buttonNum == 2 {
                     Text("Color")
                         .font(.custom("The Jamsil 4 Medium", size: 23))
-                    Text("Don’t rely solely on color to differentiate between objects or communicate important information. If you use color to convey information, be sure to provide text labels or glyph shapes to help everyone perceive it. \n\nPrefer system colors for text. When you use system colors in text, it responds correctly to accessibility settings such as Invert Colors and Increase Contrast\n\nUse strongly contrasting colors to improve readability. Many factors affect the perception of color, including font size and weight, color brightness, screen resolution, and lighting conditions. When you increase color contrast of visual elements like text, glyphs, and controls, you can help more people use your app in more situations.\n\nTo find out if the contrast of adjacent colors in your UI meets minimum acceptable levels, you can use Xcode’s Accessibility Inspector or an online color calculator based on the Web Content Accessibility Guidelines (WCAG) color contrast formula. In general, smaller or lighter-weight text needs to have greater contrast to be legible. Use the following values for guidance.")
+                    Text("Don’t rely solely on color to differentiate between objects or communicate important information. If you use color to convey information, be sure to provide text labels or glyph shapes to help everyone perceive it. \n\nPrefer system colors for text. When you use system colors in text, it responds correctly to accessibility settings such as Invert Colors and Increase Contrast\n\nUse strongly contrasting colors to improve readability. Many factors affect the perception of color, including font size and weight, color brightness, screen resolution, and lighting conditions. When you increase color contrast of visual elements like text, glyphs, and controls, you can help more people use your app in more situations.")
+                        .font(.system(size: 18, weight: .medium))
+                        .lineSpacing(6)
+                        .padding(EdgeInsets(top: 10, leading: 30, bottom: 20, trailing: 30))
+                    Image("TableText")
+                        .resizable()
+                        .frame(width: 360, height: 167)
+                    
+                    Text("To find out if the contrast of adjacent colors in your UI meets minimum acceptable levels, you can use Xcode’s Accessibility Inspector or an online color calculator based on the Web Content Accessibility Guidelines (WCAG) color contrast formula. In general, smaller or lighter-weight text needs to have greater contrast to be legible. Use the following values for guidance.")
                         .font(.system(size: 18, weight: .medium))
                         .lineSpacing(6)
                         .padding(EdgeInsets(top: 10, leading: 30, bottom: 20, trailing: 30))
