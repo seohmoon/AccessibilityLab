@@ -17,6 +17,7 @@ let package = Package(
             name: "AccessibilityLab",
             targets: ["AppModule"],
             bundleIdentifier: "seohmoon.AccessibilityLab",
+            teamIdentifier: "3VFJGJ6U7S",
             displayVersion: "1.0",
             bundleVersion: "1",
             appIcon: .asset("AppIcon"),

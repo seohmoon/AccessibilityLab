@@ -25,7 +25,7 @@ struct Step4Intro: View {
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 .padding(EdgeInsets(top: 10, leading: 30, bottom: 5, trailing: 10))
                 
-            Text("It's finally the last step.\nLet's experiment with color combinations considering accessibility based on what we learned")
+            Text("It's finally the last step.\nLet's experiment with color combinations considering accessibility based on what we learned!")
                 .font(.system(size: 17, weight: .medium))
                 .lineSpacing(6)
                 .padding(EdgeInsets(top: 5, leading: 30, bottom: 10, trailing: 30))

@@ -14,7 +14,7 @@ struct HomeView: View {
                     .font(.custom("EF_jejudoldam", size: 31))
                     .padding()
                 VStack{
-                    Text("Click the button to follow the steps.")
+                    Text("Click the button to start.")
                         .foregroundColor(Color(hex: "121C72"))
                         .font(.system(size: 18, weight: .medium))
                     
@@ -30,7 +30,7 @@ struct HomeView: View {
                         NavyButton(name: "Step 2 : Study about Guidelines", action: {sp2 = true})
                     }
                     
-                    NavyButton(name: "Step 3 : Take a Quiz and Review", action: {sp3 = true})
+                    NavyButton(name: "Quiz : Review what you learned", action: {sp3 = true})
                         .background(
                             NavigationLink(
                                 destination: Step3Intro(goHome: $sp3), isActive: $sp3, label: {EmptyView()}
@@ -42,7 +42,7 @@ struct HomeView: View {
 //                        NavyButton(name: "Step 3 : Take a Quiz and Review", action: {sp3 = true})
 //                    }
 
-                    NavyButton(name: "Step 4 : Let's do it in the Lab", action: {sp4 = true})
+                    RedButton(name: "Let's do it in the Lab", action: {sp4 = true})
                         .background(
                             NavigationLink(
                                 destination: Step4Intro(goHome: $sp4), isActive: $sp4, label: {EmptyView()}
