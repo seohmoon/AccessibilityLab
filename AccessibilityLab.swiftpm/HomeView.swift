@@ -14,7 +14,7 @@ struct HomeView: View {
                     .font(.custom("EF_jejudoldam", size: 31))
                     .padding()
                 VStack{
-                    Text("Click the button to start.")
+                    Text("Click the button to start")
                         .foregroundColor(Color(hex: "121C72"))
                         .font(.system(size: 18, weight: .medium))
                     
