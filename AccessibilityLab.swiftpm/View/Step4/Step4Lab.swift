@@ -96,7 +96,7 @@ struct Step4Lab: View {
                                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                             Spacer()
                             ForEach(0..<colorList.count) { index in
-                                ColorCircle(hexnum: colorList[index])
+                                ColorCircle(hexNum: colorList[index])
                                     .onTapGesture {
                                         self.backColor = Color(hex: colorList[index])
                                         self.backResult = colorList[index]
@@ -111,7 +111,7 @@ struct Step4Lab: View {
                                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                             Spacer()
                             ForEach(0..<colorList.count) { index in
-                                ColorCircle(hexnum: colorList[index])
+                                ColorCircle(hexNum: colorList[index])
                                     .onTapGesture {
                                         self.arrowColor = Color(hex: colorList[index])
                                         self.arrowResult = colorList[index]
