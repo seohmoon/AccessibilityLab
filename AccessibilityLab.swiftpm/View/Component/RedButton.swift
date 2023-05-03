@@ -1,18 +1,16 @@
 import SwiftUI
 
 struct RedButton: View{
-    var name : String
+    var name: String
     var action: () -> Void
     var body: some View{
         Button(
-            action:action,
-            label:{
+            action: action,
+            label: {
                 ZStack{
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex: "682B2B")).offset(x:-3,y:4)
                     
-                    RoundedRectangle(cornerSize: CGSize(width: 9, height: 9)).foregroundColor(Color(hex: "FFFFFF"))
-                    
-                    
+                    RoundedRectangle(cornerSize: CGSize(width: 9, height: 9)).foregroundColor(Color(hex: "FFFFFF"))    
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex:"863737"))
                         .frame(width: 270,height: 45)
                  Text(name).foregroundColor(.white)

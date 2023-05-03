@@ -10,7 +10,7 @@ struct Step4Lab: View {
     @State var arrowColor = Color(hex: "FFFA79")
     @State var nextValue: Int = 0
     
-    @Binding var goHome : Bool
+    @Binding var goHome: Bool
     
     
     func changeNextValue() -> Int {

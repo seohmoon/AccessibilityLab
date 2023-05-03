@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Step3Quiz1: View {
-    @State var ansNum : Int = 0
+    @State var ansNum: Int = 0
     @State var goQuiz1Result: Bool = false
     @Binding var goHome: Bool
     

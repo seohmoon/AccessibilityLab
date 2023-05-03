@@ -3,11 +3,10 @@ import SwiftUI
 struct Step4Result: View {
     @State var labRetry: Bool = false
     @State var labHome: Bool = false
-    @Binding var backResult : String
-    @Binding var arrowResult : String
-    @Binding var nextValue : Int
-    
-    @Binding var goHome : Bool
+    @Binding var backResult: String
+    @Binding var arrowResult: String
+    @Binding var nextValue: Int
+    @Binding var goHome: Bool
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 //
@@ -119,11 +118,7 @@ struct Step4Result: View {
                 NavigationLink(destination: Step4Lab(goHome: $goHome), isActive: $labRetry){
                     SmallNavyButton(name: "Retry", action: {presentationMode.wrappedValue.dismiss()})
                 }
-                
-
                 SmallNavyButton(name: "Home", action: {goHome = false})
-                
-
             }
         }
     }

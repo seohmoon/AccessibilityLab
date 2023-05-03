@@ -7,7 +7,7 @@ struct Step2Intro: View {
     @State var bt4: Bool = false
     @State var bt5: Bool = false
     @State var bt6: Bool = false
-    @State var buttonNum : Int = 0
+    @State var buttonNum: Int = 0
     
     var body: some View {
         VStack{

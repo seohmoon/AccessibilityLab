@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct Step1Intro: View {
-    @State var changeView : Bool = false
-    @State var sp1Ex : Bool = false
+    @State var changeView: Bool = false
+    @State var sp1Ex: Bool = false
     
     @Binding var goHome: Bool
     

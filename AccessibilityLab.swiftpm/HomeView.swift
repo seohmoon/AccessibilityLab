@@ -6,7 +6,6 @@ struct HomeView: View {
     @State var sp3: Bool = false
     @State var sp4: Bool = false
     
-    
     var body: some View {
         NavigationView{
             VStack {
@@ -25,11 +24,9 @@ struct HomeView: View {
                             )
                             .isDetailLink(false)
                         )
-                    
                     NavigationLink(destination: Step2Intro(), isActive: $sp2){
                         NavyButton(name: "Step 2 : Study about Guidelines", action: {sp2 = true})
                     }
-                    
                     NavyButton(name: "Quiz : Review what you learned", action: {sp3 = true})
                         .background(
                             NavigationLink(
@@ -37,7 +34,6 @@ struct HomeView: View {
                             )
                             .isDetailLink(false)
                         )
-
                     RedButton(name: "Let's do it in the Lab", action: {sp4 = true})
                         .background(
                             NavigationLink(
@@ -45,15 +41,12 @@ struct HomeView: View {
                             )
                             .isDetailLink(false)
                         )
-                    
                     Image("al_home")
                         .resizable()
                         .frame(width: 345, height: 260)
                 }
             }
-            
         }
-        
     }
 }
 

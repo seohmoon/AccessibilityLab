@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct Step2Button: View {
-    var name : String
+    var name: String
     var action: () -> Void
     var body: some View {
         Button(
-            action:action,
-            label:{
+            action: action,
+            label: {
                 ZStack{
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).foregroundColor(Color(hex:"121C72"))
                         .frame(width: 150,height: 48)
