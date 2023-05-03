@@ -1,6 +1,6 @@
 import SwiftUI
 
-let colorList = ["FFFFFF", "FFFA79", "EE8B48","717C24","4C48FF","9E00FF"]
+let colors = ["FFFFFF", "FFFA79", "EE8B48","717C24","4C48FF","9E00FF"]
 
 struct Step4Lab: View {
     @State var labCheck: Bool = false
@@ -17,9 +17,9 @@ struct Step4Lab: View {
         let colorSet = Set([backResult, arrowResult])
         if backResult == arrowResult {
             return 1
-        } else if colorSet.contains(colorList[2]) && colorSet.contains(colorList[3]) {
+        } else if colorSet.contains(colors[2]) && colorSet.contains(colors[3]) {
             return 2
-        } else if (colorSet.contains(colorList[0]) && colorSet.contains(colorList[3])) || (colorSet.contains(colorList[0]) && colorSet.contains(colorList[4])) || (colorSet.contains(colorList[0]) && colorSet.contains(colorList[5])) || (colorSet.contains(colorList[1]) && colorSet.contains(colorList[3])) || (colorSet.contains(colorList[1]) && colorSet.contains(colorList[4])) || (colorSet.contains(colorList[1]) && colorSet.contains(colorList[5])) {
+        } else if (colorSet.contains(colors[0]) && colorSet.contains(colors[3])) || (colorSet.contains(colors[0]) && colorSet.contains(colors[4])) || (colorSet.contains(colors[0]) && colorSet.contains(colors[5])) || (colorSet.contains(colors[1]) && colorSet.contains(colors[3])) || (colorSet.contains(colors[1]) && colorSet.contains(colors[4])) || (colorSet.contains(colors[1]) && colorSet.contains(colors[5])) {
             return 3
         }
         return 0
@@ -95,11 +95,11 @@ struct Step4Lab: View {
                                 .font(.custom("The Jamsil 4 Medium", size: 20))
                                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                             Spacer()
-                            ForEach(0..<colorList.count) { index in
-                                ColorCircle(hexNum: colorList[index])
+                            ForEach(0..<colors.count) { index in
+                                ColorCircle(hexNum: colors[index])
                                     .onTapGesture {
-                                        self.backColor = Color(hex: colorList[index])
-                                        self.backResult = colorList[index]
+                                        self.backColor = Color(hex: colors[index])
+                                        self.backResult = colors[index]
                                     }
                             }
                         }
@@ -110,11 +110,11 @@ struct Step4Lab: View {
                                 .font(.custom("The Jamsil 4 Medium", size: 20))
                                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                             Spacer()
-                            ForEach(0..<colorList.count) { index in
-                                ColorCircle(hexNum: colorList[index])
+                            ForEach(0..<colors.count) { index in
+                                ColorCircle(hexNum: colors[index])
                                     .onTapGesture {
-                                        self.arrowColor = Color(hex: colorList[index])
-                                        self.arrowResult = colorList[index]
+                                        self.arrowColor = Color(hex: colors[index])
+                                        self.arrowResult = colors[index]
                                     }
                             }
                         }
